@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'Test'
+        default: 'akash'
+        required: false
+        type: string
+
+jobs:
+  print-username:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print the input name STDOUT
+        run: echo The username is ${{ inputs.username }}
